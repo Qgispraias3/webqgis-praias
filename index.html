@@ -222,11 +222,7 @@
             collapsed: false, 
         });
         lay.addTo(map);
-		document.querySelectorAll('.leaflet-control-layers-selector').forEach(function(el) {
-    el.style.display = 'none';
-});
-            // set new Layers List height which considers toggle icon
-            function newLayersListHeight() {
+		
                 var layerScrollbarElement = document.querySelector('.leaflet-control-layers-scrollbar');
                 if (layerScrollbarElement) {
                     var layersListElement = document.querySelector('.leaflet-control-layers-list');
