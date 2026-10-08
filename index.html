@@ -200,7 +200,12 @@
                     feature: feature,
                     variables: {}
                 };
-                return L.marker(latlng, style_pontos_balneabilidade_recife_0_0(feature));
+                return L.circleMarker(latlng, {
+    radius: 8,
+    color: 'black',
+    fillColor: 'red',
+    fillOpacity: 1
+});
             },
         });
         bounds_group.addLayer(layer_pontos_balneabilidade_recife_0);
