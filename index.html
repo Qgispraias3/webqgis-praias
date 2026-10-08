@@ -211,7 +211,7 @@
         bounds_group.addLayer(layer_pontos_balneabilidade_recife_0);
         map.addLayer(layer_pontos_balneabilidade_recife_0);
         var overlaysTree = [
-            {label: 'pontos_balneabilidade_recife<br /><table><tr><td style="text-align: center;"><img src="legend/pontos_balneabilidade_recife_0_Imprópria0.png" /></td><td>Imprópria</td></tr><tr><td style="text-align: center;"><img src="legend/pontos_balneabilidade_recife_0_Própria1.png" /></td><td>Própria</td></tr></table>', layer: layer_pontos_balneabilidade_recife_0},]
+            {label: /><table><tr><td style="text-align: center;"><img src="legend/pontos_balneabilidade_recife_0_Imprópria0.png" /></td><td>Imprópria</td></tr><tr><td style="text-align: center;"><img src="legend/pontos_balneabilidade_recife_0_Própria1.png" /></td><td>Própria</td></tr></table>', layer: layer_pontos_balneabilidade_recife_0},]
         var lay = L.control.layers.tree(null, overlaysTree,{
             //namedToggle: true,
             //selectorBack: false,
@@ -222,7 +222,9 @@
             collapsed: false, 
         });
         lay.addTo(map);
-		document.addEventListener("DOMContentLoaded", function() {
+		document.querySelectorAll('.leaflet-control-layers-selector').forEach(function(el) {
+    el.style.display = 'none';
+});
             // set new Layers List height which considers toggle icon
             function newLayersListHeight() {
                 var layerScrollbarElement = document.querySelector('.leaflet-control-layers-scrollbar');
